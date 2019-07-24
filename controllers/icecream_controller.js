@@ -3,16 +3,16 @@ var express = require("express");
 var icecream = require("../models/icecream");
 var router = express.Router();
 
-//4. Create the `router` for the app, and export the `router` at the end of your file.
+// Create the `router` for the app, and export the `router` at the end of your file.
 // Create all our routes and set up logic within those routes where required.
 
 router.get("/", function(req, res) {
-    icecream.all(function(data) {
-      var icObject = {
+    icecream.selectAll(function(data) {
+      var iceObject = {
         icecream: data
       };
-      console.log(icObject);
-      res.render("index", icObject);
+      console.log(iceObject);
+      res.render("index", iceObject);
     });
   });
   
@@ -57,5 +57,5 @@ router.get("/", function(req, res) {
 //     });
 //   });
   
-//   // Export routes for server.js to use.
-//   module.exports = router;
+//  Export routes for server.js to use.
+   module.exports = router;
