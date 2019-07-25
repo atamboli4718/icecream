@@ -9,9 +9,9 @@ var icecream = {
         })
     },
 //     orm.insertOne();
-  updateOne: function(cb){
+  updateOne: function(newValue, id_value, cb){
     console.log("made it to icecream.js UpdateOne");
-    orm.updateOne("icecream", function(res){
+    orm.updateOne('icecream', 'devoured', newValue, "id", id_value, function(res){
       console.log(res);
       cb(res);
     });

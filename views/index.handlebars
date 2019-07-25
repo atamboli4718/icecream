@@ -10,25 +10,24 @@
         <h3>Ice Cream Menu</h3>
         <ul>
           {{#each icecream}}
+          {{#unless devoured}}
             <li>
               <p>{{icename}}</p>
-              {{#if onMenu}}
-              {{> icecream devoured=false}}
-              {{/if}}
-              <p><button type="submit" class="btn btn-secondary" id="change-devour">Mmmm Delicious!</button></p>
+              {{icecream devoured=false}}
             </li>
+            <p><button type="submit" data-id="{{this.id}}" class="btn btn-secondary change-devour" >Mmmm Delicious!</button></p>
+            {{/unless}}
           {{/each}}
         </ul>
       </div>
       <div id="IcecreamEaten">
         <h3>Ice Cream Eaten</h3>
           <ul>
-            {{#each icecreams}}
+            {{#each icecream}}
             {{#if devoured}}
-            <div class="input-group mb-1">
-              <li class="form-control">{{this.iceName}}</li>
-              <button class="btn btn-secondary js_deleteBurger" data-id="{{this.id}}">Eat Me!</button>
-            </div>
+            <li>
+              <p>{{icename}}</p>
+            </li>
             {{/if}}
             {{/each}}
           </ul>

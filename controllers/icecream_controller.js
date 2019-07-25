@@ -24,11 +24,11 @@ router.get("/", function(req, res) {
   //     res.json({ id: result.insertId });
   //   });
   // });
-  
+
   router.put("/api/icecream/:id", function(req, res) {
     var id = req.params.id;
 
-    icecream.updateOne(id, req.body.devoured,function(result) {
+    icecream.updateOne(req.body.devoured,id, function(result) {
      //console.log(result)
      res.json({ changed: result.changedRows })
     });

@@ -1,20 +1,16 @@
 $(function() {
     $(".change-devour").on("click", function(event) {
         console.log("In .change-devour function in icecreams.js");
+      event.preventDefault();
       var id = $(this).data("id");
-      var newDevour = $(this).data("newDevour");
-  
-      var newDevourState = {
-        devour: newDevour
-      };
   
       // Send the PUT request.
       $.ajax("/api/icecream/" + id, {
         type: "PUT",
-        data: newDevourState
+        data: {devoured:1}
       }).then(
         function() {
-          console.log("changed devoured to: ", newDevour);
+          console.log("changed devoured to: devoured");
           // Reload the page to get the updated list
           location.reload();
         }
