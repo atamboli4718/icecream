@@ -1,6 +1,3 @@
-// * `selectAll()`
-// * `insertOne()`
-// * `updateOne()`
 
 var connection = require("./connection.js");
 
@@ -10,6 +7,7 @@ var orm = {
       var queryString = "SELECT * FROM ??";
       connection.query(queryString, [table], function(err, result) {
         if (err) throw err;
+        console.log(result);
         cb(result);
       });
     },

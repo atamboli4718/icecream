@@ -1,5 +1,5 @@
-
-INSERT INTO icecream (icecream_name) 
+USE icecream_db;
+INSERT INTO icecream (icename)
 VALUES ("Chocolate"),
         ("Vanilla"),
         ("Strawberry"),

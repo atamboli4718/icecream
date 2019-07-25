@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>IceCream Shop</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../public/assets/css/icecream_style.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</head>
-
 <body>
 
   <div class="container mt-5">
@@ -23,13 +10,16 @@
         <ul>
           {{#each icecream}}
             <li>
-              <p>{{icecreamName}}</p>
-              <p><button type="submit" class="btn btn-secondary" id="devourBtn">Devoured!</button></p>
+              <p>{{icename}}</p>
+              {{#if onMenu}}
+              {{> icecream devoured=false}}
+              {{/if}}
+              <p><button type="submit" class="btn btn-secondary" id="change-devour">Mmmm Delicious!</button></p>
             </li>
           {{/each}}
         </ul>
       </div>
-      <div id="devouredIceCream">
+      {{!-- <div id="devouredIceCream">
         <ul>
           {{#each icecream}}
             <li>
@@ -38,7 +28,7 @@
             </li>
           {{/each}}
         </ul>
-      </div>
+      </div> --}}
       <form name="formSurvey">
         <br>
         <h4 class="text-center">What kind of ice cream would you like?</h4>

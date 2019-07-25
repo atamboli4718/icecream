@@ -5,6 +5,7 @@ var express = require("express");
 var router = require("./controllers/icecream_controller");
 var app = express();
 
+
 var PORT = process.env.PORT || 3000;
 
 // Parse request body as JSON
@@ -16,6 +17,7 @@ app.set("view engine", "handlebars");
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
+
 app.use(router);
 
 app.listen(PORT, function() {

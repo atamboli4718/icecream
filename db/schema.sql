@@ -13,7 +13,7 @@ USE icecream_db;
 
 CREATE TABLE icecream (
   id int AUTO_INCREMENT NOT NULL,
-  icecream_name varchar(30) NOT NULL,
+  icename varchar(30) NOT NULL,
   devoured boolean DEFAULT false,
   PRIMARY KEY(id)
 );
