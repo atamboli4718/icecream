@@ -17,33 +17,23 @@ router.get("/", function(req, res) {
   });
   
   
-  router.post("/api/icecream", function(req, res) {
+  // router.post("/api/icecream", function(req, res) {
    
-    icecream.insertIcecream([req.body.data.iceName], function(result) {
+  //   icecream.insertIcecream([req.body.data.iceName], function(result) {
       
-      res.json({ id: result.insertId });
-    });
-  });
+  //     res.json({ id: result.insertId });
+  //   });
+  // });
+  
   router.put("/api/icecream/:id", function(req, res) {
     var id = req.params.id;
 
-    icecream.devourIcecream(id, req.body.devoured,function(result) {
+    icecream.updateOne(id, req.body.devoured,function(result) {
      //console.log(result)
      res.json({ changed: result.changedRows })
     });
 
   }) ;
-  router.delete("/api/icecreams/:id", function(req, res) {
-    var id = req.params.id;
-    
-    icecream.eatIcecream(id, function(result) {
-     //console.log(result)
-     
-     res.json({ affected: result.affectedRows })
-    
-    });
-
-  })  
   
 //  Export routes for server.js to use.
    module.exports = router;

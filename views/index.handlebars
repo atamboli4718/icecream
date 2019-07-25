@@ -7,6 +7,7 @@
         <hr>
       </div>
       <div id="icecreamMenu"> 
+        <h3>Ice Cream Menu</h3>
         <ul>
           {{#each icecream}}
             <li>
@@ -19,19 +20,22 @@
           {{/each}}
         </ul>
       </div>
-      {{!-- <div id="devouredIceCream">
-        <ul>
-          {{#each icecream}}
-            <li>
-              <p>{{icecreamName}}</p>
-              <p><button type="submit" class="btn btn-secondary" id="devourBtn">Devoured!</button></p>
-            </li>
-          {{/each}}
-        </ul>
-      </div> --}}
+      <div id="IcecreamEaten">
+        <h3>Ice Cream Eaten</h3>
+          <ul>
+            {{#each icecreams}}
+            {{#if devoured}}
+            <div class="input-group mb-1">
+              <li class="form-control">{{this.iceName}}</li>
+              <button class="btn btn-secondary js_deleteBurger" data-id="{{this.id}}">Eat Me!</button>
+            </div>
+            {{/if}}
+            {{/each}}
+          </ul>
+      </div>
       <form name="formSurvey">
         <br>
-        <h4 class="text-center">What kind of ice cream would you like?</h4>
+        <h4 class="text-center">What kind of ice cream would you like to add to the menu?</h4>
         <div class="col-lg-12 text-center"> 
             <input type="name" class="form-control col-md-12 text-center" id="newIceCreamName" aria-describedby="newIceCreamName"
             placeholder="Type of Ice Cream">

@@ -7,9 +7,15 @@ var icecream = {
             console.log(res);
             cb(res);
         })
-    }
+    },
 //     orm.insertOne();
-//     orm.updateOne();
+  updateOne: function(cb){
+    console.log("made it to icecream.js UpdateOne");
+    orm.updateOne("icecream", function(res){
+      console.log(res);
+      cb(res);
+    });
+  }
 }
 
 

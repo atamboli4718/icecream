@@ -19,14 +19,13 @@ var orm = {
     //       cb(result);
     //     });
     //   },
-    // updateOne: function(existingIcecream) {
-    // var queryString = "UPDATE icecream SET ? = TRUE", [existingIcecream];
-  
-    //     connection.query(queryString, function(err, result) {
-    //     if (err) throw err;
-    //     cb(result);
-    //     });
-    // },
+    updateOne: function (table, UPD_col, newValue, WHERE_col, id_value, cb) {
+      var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
+      connection.query(queryString, [table, UPD_col, newValue, WHERE_col, id_value], function (err, result) {
+        if (err) throw err;
+        cb(result);
+      });
+    },
   };
   
   module.exports = orm;
