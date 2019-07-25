@@ -6,56 +6,53 @@
         <h1><span class="fa fa-heart-o"></span> Welcome to the Ice Cream Shop</h1>
         <hr>
       </div>
-      <div id="icecreamMenu"> 
-        <h3>Ice Cream Menu</h3>
-        <ul>
-          {{#each icecream}}
-          {{#unless devoured}}
-            <li>
-              <p>{{icename}}</p>
-              {{icecream devoured=false}}
-            </li>
-            <p><button type="submit" data-id="{{this.id}}" class="btn btn-secondary change-devour" >Mmmm Delicious!</button></p>
-            {{/unless}}
-          {{/each}}
-        </ul>
-      </div>
-      <div id="IcecreamEaten">
-        <h3>Ice Cream Eaten</h3>
-          <ul>
-            {{#each icecream}}
-            {{#if devoured}}
-            <li>
-              <p>{{icename}}</p>
-            </li>
-            {{/if}}
-            {{/each}}
-          </ul>
+      <div class="row">
+        <div class="col-md-6">
+          <div id="icecreamMenu">
+            <h3>Ice Cream Menu</h3>
+            <ul>
+              {{#each icecream}}
+              {{#unless devoured}}
+              <li>
+                <p>{{icename}}</p>
+                {{icecream devoured=false}}
+              </li>
+              <p><button type="submit" data-id="{{this.id}}" class="btn btn-secondary change-devour">Mmmm
+                  Delicious!</button></p>
+              {{/unless}}
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div id="IcecreamEaten">
+            <h3>Ice Cream Eaten</h3>
+            <ul>
+              {{#each icecream}}
+              {{#if devoured}}
+              <li>
+                <p>{{icename}}</p>
+              </li>
+              {{/if}}
+              {{/each}}
+            </ul>
+          </div>
+        </div>
       </div>
       <form name="formSurvey">
         <br>
         <h4 class="text-center">What kind of ice cream would you like to add to the menu?</h4>
-        <div class="col-lg-12 text-center"> 
-            <input type="name" class="form-control col-md-12 text-center" id="newIceCreamName" aria-describedby="newIceCreamName"
-            placeholder="Type of Ice Cream">
+        <div class="col-lg-12 text-center">
+          <input type="name" class="form-control col-md-12 text-center" id="newIceCreamName"
+            aria-describedby="newIceCreamName" placeholder="Type of Ice Cream">
         </div>
         <br>
-        <div class="col-lg-12 text-center"> 
-            <button type="submit" class="btn btn-secondary" id="submitBtn">Submit</button>
-        </div>    
-        </form>
+        <div class="col-lg-12 text-center">
+          <button type="submit" class="btn btn-secondary" id="submitBtn">Submit</button>
+        </div>
+      </form>
     </div>
-  </div>    
+  </div>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
