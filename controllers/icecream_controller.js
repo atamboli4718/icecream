@@ -17,19 +17,18 @@ router.get("/", function(req, res) {
   });
   
   
-  // router.post("/api/icecream", function(req, res) {
-   
-  //   icecream.insertIcecream([req.body.data.iceName], function(result) {
+  router.post("/api/icecream", function(req, res) {
+    console.log("req.body.data: " + JSON.stringify(req.body.data));
+    icecream.insertOne([req.body.data.name], function(result) {
       
-  //     res.json({ id: result.insertId });
-  //   });
-  // });
+      res.json({ id: result.insertId });
+    });
+  });
 
   router.put("/api/icecream/:id", function(req, res) {
     var id = req.params.id;
 
     icecream.updateOne(req.body.devoured,id, function(result) {
-     //console.log(result)
      res.json({ changed: result.changedRows })
     });
 
